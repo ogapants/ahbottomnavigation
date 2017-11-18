@@ -1,15 +1,15 @@
 package com.aurelhubert.ahbottomnavigation.demo;
 
 import android.os.Bundle;
-import android.support.v4.view.ViewPager;
 import android.support.v7.app.AppCompatActivity;
 
 import com.aurelhubert.ahbottomnavigation.AHBottomNavigation;
 import com.aurelhubert.ahbottomnavigation.AHBottomNavigationAdapter;
+import com.aurelhubert.ahbottomnavigation.AHBottomNavigationViewPager;
 
 public class DemoActivity extends AppCompatActivity {
 
-	private ViewPager viewPager;
+	private AHBottomNavigationViewPager viewPager;
 
 	@Override
 	protected void onCreate(Bundle savedInstanceState) {
@@ -27,7 +27,7 @@ public class DemoActivity extends AppCompatActivity {
 				return true;
 			}
 		});
-		viewPager = (ViewPager) findViewById(R.id.view_pager);
+		viewPager = (AHBottomNavigationViewPager) findViewById(R.id.view_pager);
 		viewPager.setOffscreenPageLimit(bottomNavigation.getItemsCount());
 		viewPager.setAdapter(new DemoViewPagerAdapter(getSupportFragmentManager()));
 	}
